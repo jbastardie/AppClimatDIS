@@ -3,8 +3,8 @@
     <color name="colorPrimary">#1ec1cf</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#d81b60</color>
-    <color name="colorBackGroundTime">#d0feff</color>
-    <color name="colorBackGroundCO2">#d1ffd8</color>
-    <color name="colorTime">#87fce8</color>
-    <color name="colorCO2">#85ea85</color>
+    <color name="colorBackGroundTime">#94cacc</color>
+    <color name="colorBackGroundCO2">#d9f7f9</color>
+    <color name="colorTime">#3da1a3</color>
+    <color name="colorCO2">#a5dad2</color>
 </resources>
