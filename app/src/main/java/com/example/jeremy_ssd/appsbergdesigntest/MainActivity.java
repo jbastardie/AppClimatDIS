@@ -3,6 +3,8 @@ package com.example.jeremy_ssd.appsbergdesigntest;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
@@ -46,5 +48,15 @@ public class MainActivity extends AppCompatActivity {
         LineData lineData = new LineData(dataSet);
         chart.setData(lineData);
         chart.invalidate(); // refresh
+
+        String timeTotalText = "<font color='#3da1a3'> <b>• 1H 24M</b></font>/1H 30M";
+        String tempsUtilisation = "Temps Utilisation";
+        TextView textViewTime = findViewById(R.id.textViewResumeTime);
+        textViewTime.setText(Html.fromHtml(timeTotalText+"<br>"+tempsUtilisation));
+
+        String co2TotalText = "<font color='#a5dad2'> <b>• 17gCO2</b></font>/20gCO2";
+        String emissionCO2 = "Emission CO2";
+        TextView textViewCO2 = findViewById(R.id.textViewResumeCO2);
+        textViewCO2.setText(Html.fromHtml(co2TotalText+"<br>"+emissionCO2));
     }
 }

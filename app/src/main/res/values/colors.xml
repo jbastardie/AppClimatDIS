@@ -7,4 +7,5 @@
     <color name="colorBackGroundCO2">#d9f7f9</color>
     <color name="colorTime">#3da1a3</color>
     <color name="colorCO2">#a5dad2</color>
+    <color name="backgroundTable">#efefef</color>
 </resources>

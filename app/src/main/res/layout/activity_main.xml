@@ -9,9 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,18 +66,56 @@
                     app:layout_constraintTop_toBottomOf="@+id/circularProgress2" />
             </android.support.constraint.ConstraintLayout>
 
-            <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/chart"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="197dp"
-                android:layout_margin="10dp"
-                android:layout_marginTop="32dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView">
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@color/backgroundTable"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-            </com.github.mikephil.charting.charts.LineChart>
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:id="@+id/textViewResumeTime"
+                        android:layout_width="133dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="• 1H 24M/1H 30M\nTemps Utilisation"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/textViewResumeCO2" />
+
+                    <TextView
+                        android:id="@+id/textViewResumeCO2"
+                        android:layout_width="127dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="• 17gCO2/20g\nEmission CO2"
+                        app:layout_constraintEnd_toStartOf="@+id/textViewResumeTime"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </android.support.constraint.ConstraintLayout>
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="197dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView">
+
+                </com.github.mikephil.charting.charts.LineChart>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
