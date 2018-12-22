@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hello World!"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/circularProgress"
+                    android:layout_width="212dp"
+                    android:layout_height="232dp"
+                    android:background="@drawable/imagedefondlite"
+                    app:cpb_background_progressbar_color="#FFCDD2"
+                    app:cpb_background_progressbar_width="10dp"
+                    app:cpb_progressbar_color="#F44336"
+                    app:cpb_progressbar_width="7dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/circularProgress2"
+                    android:layout_width="177dp"
+                    android:layout_height="180dp"
+                    app:cpb_background_progressbar_color="#68b9c0"
+                    app:cpb_background_progressbar_width="10dp"
+                    app:cpb_progressbar_color="#F44336"
+                    app:cpb_progressbar_width="7dp"
+                    app:layout_constraintBottom_toTopOf="@+id/circularProgress"
+                    app:layout_constraintEnd_toStartOf="@+id/circularProgress"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/circularProgress"
+                    app:layout_constraintTop_toBottomOf="@+id/circularProgress" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:shadowRadius="200"
+                    android:shape="oval"
+                    android:state_pressed="false"
+                    android:text="3H 18M \n 14gCO2"
+                    app:layout_constraintBottom_toTopOf="@+id/circularProgress2"
+                    app:layout_constraintEnd_toStartOf="@+id/circularProgress2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/circularProgress2"
+                    app:layout_constraintTop_toBottomOf="@+id/circularProgress2" />
+            </android.support.constraint.ConstraintLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart"
+                android:layout_width="368dp"
+                android:layout_height="229dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView">
+
+            </com.github.mikephil.charting.charts.LineChart>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
