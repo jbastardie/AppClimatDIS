@@ -23,16 +23,10 @@
                 android:layout_height="350dp"
                 android:background="@drawable/icebergsolononeige">
 
-                <com.jetradarmobile.snowfall.SnowfallView
-                    android:layout_width="match_parent"
-                    android:layout_height="254dp"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/circularProgress" />
-
                 <com.mikhaellopez.circularprogressbar.CircularProgressBar
                     android:id="@+id/circularProgress"
-                    android:layout_width="173dp"
-                    android:layout_height="162dp"
+                    android:layout_width="152dp"
+                    android:layout_height="151dp"
                     android:layout_marginTop="72dp"
                     app:cpb_background_progressbar_color="@color/colorBackGroundTime"
                     app:cpb_background_progressbar_width="10dp"
@@ -45,8 +39,8 @@
 
                 <com.mikhaellopez.circularprogressbar.CircularProgressBar
                     android:id="@+id/circularProgress2"
-                    android:layout_width="155dp"
-                    android:layout_height="129dp"
+                    android:layout_width="135dp"
+                    android:layout_height="130dp"
                     app:cpb_background_progressbar_color="@color/colorBackGroundCO2"
                     app:cpb_background_progressbar_width="10dp"
                     app:cpb_progressbar_color="#F44336"
@@ -58,19 +52,48 @@
                     app:layout_constraintTop_toBottomOf="@+id/circularProgress" />
 
                 <Button
-                    android:id="@+id/button"
-                    android:layout_width="70dp"
-                    android:layout_height="63dp"
-                    android:shadowRadius="200"
-                    android:shape="oval"
+                    android:id="@+id/buttonTodayActivity"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/round_shape"
                     android:state_pressed="false"
                     android:text="3H 18M \n 14gCO2"
-                    android:textSize="8sp"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
                     app:layout_constraintBottom_toTopOf="@+id/circularProgress2"
                     app:layout_constraintEnd_toStartOf="@+id/circularProgress2"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/circularProgress2"
                     app:layout_constraintTop_toBottomOf="@+id/circularProgress2" />
+
+                <ImageView
+                    android:id="@+id/imageViewPingouin"
+                    android:layout_width="94dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="116dp"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/circularProgress2"
+                    app:srcCompat="@drawable/pingouinlite" />
+
+                <com.jetradarmobile.snowfall.SnowfallView
+                    android:layout_width="match_parent"
+                    android:layout_height="266dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/circularProgress"
+                    app:snowflakeAlphaMax="255"
+                    app:snowflakeAlphaMin="200"
+                    app:snowflakeAngleMax="10"
+                    app:snowflakeSizeMax="8dp"
+                    app:snowflakeSizeMin="2dp"
+                    app:snowflakeSpeedMax="6"
+                    app:snowflakeSpeedMin="2"
+                    app:snowflakesAlreadyFalling="true"
+                    app:snowflakesFadingEnabled="true"
+                    app:snowflakesNum="120" />
+
             </android.support.constraint.ConstraintLayout>
 
             <LinearLayout
