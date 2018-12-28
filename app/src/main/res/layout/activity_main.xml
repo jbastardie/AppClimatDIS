@@ -14,13 +14,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#3da1a3"
+            android:background="@drawable/gradient_background"
             android:orientation="vertical">
+
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
-                android:background="@drawable/icebergsoloneige">
+                android:background="@drawable/icebergsolononeige">
+
+                <com.jetradarmobile.snowfall.SnowfallView
+                    android:layout_width="match_parent"
+                    android:layout_height="254dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/circularProgress" />
 
                 <com.mikhaellopez.circularprogressbar.CircularProgressBar
                     android:id="@+id/circularProgress"
@@ -70,7 +77,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"
-                android:background="@color/backgroundTable"
                 android:orientation="vertical"
                 android:padding="10dp">
 
@@ -78,7 +84,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="20dp">
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/backgroundTable">
 
                     <TextView
                         android:id="@+id/textViewResumeTime"
@@ -100,6 +107,7 @@
                         app:layout_constraintEnd_toStartOf="@+id/textViewResumeTime"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent" />
+
                 </android.support.constraint.ConstraintLayout>
 
                 <com.github.mikephil.charting.charts.LineChart
@@ -108,12 +116,19 @@
                     android:layout_height="197dp"
                     android:layout_margin="10dp"
                     android:layout_marginTop="32dp"
+                    android:background="@color/backgroundTable"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/textView">
 
                 </com.github.mikephil.charting.charts.LineChart>
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="Button" />
             </LinearLayout>
 
         </LinearLayout>
