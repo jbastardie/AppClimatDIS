@@ -101,35 +101,81 @@
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="20dp"
-                    android:background="@color/backgroundTable">
+                    android:background="@color/backgroundTable"
+                    android:elevation="2dp">
 
                     <TextView
                         android:id="@+id/textViewResumeTime"
-                        android:layout_width="133dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
+                        android:background="@color/backgroundTable"
+                        android:gravity="left"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
                         android:text="• 1H 24M/1H 30M\nTemps Utilisation"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/textViewResumeCO2" />
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/flecheAllAppDay"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
                         android:id="@+id/textViewResumeCO2"
-                        android:layout_width="127dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
+                        android:background="@color/backgroundTable"
+                        android:gravity="left"
+                        android:paddingLeft="2dp"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
                         android:text="• 17gCO2/20g\nEmission CO2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewLeafEco"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <ImageView
+                        android:id="@+id/imageViewLeafEco"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="13dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.476"
+                        app:srcCompat="@drawable/leafecology" />
+
+                    <ImageView
+                        android:id="@+id/imageViewChrono"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textViewResumeTime"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.476"
+                        app:srcCompat="@drawable/chrono" />
+
+                    <TextView
+                        android:id="@+id/flecheAllAppDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="2dp"
+                        android:text=">"
+                        android:textColor="#FFB1BEBC"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </android.support.constraint.ConstraintLayout>
 
@@ -143,7 +189,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView">
+                    app:layout_constraintTop_toTopOf="@+id/flecheAllAppDay">
 
                 </com.github.mikephil.charting.charts.LineChart>
 

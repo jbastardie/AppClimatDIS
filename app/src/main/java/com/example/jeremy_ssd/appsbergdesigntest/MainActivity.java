@@ -50,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
         chart.setData(lineData);
         chart.invalidate(); // refresh
 
-        String timeTotalText = "<font color='#3da1a3'><big><b>• 1H 24M</b></font></big><small>/1H 30M</small>";
+        String timeTotalText = "<font color='#3da1a3'><big><b>1H 24M</b></font></big><small>/1H 30M</small>";
         String tempsUtilisation = "Temps Utilisation";
         TextView textViewTime = findViewById(R.id.textViewResumeTime);
         textViewTime.setText(Html.fromHtml(timeTotalText+"<br>"+tempsUtilisation));
 
-        String co2TotalText = "<font color='#a5dad2'><big><b>• 17g CO2</b></font></big><small>/20g CO2</small>";
+        String co2TotalText = "<font color='#a5dad2'><big><b>17g CO2</b></font></big><small>/20g</small>";
         String emissionCO2 = "Emission CO2";
         TextView textViewCO2 = findViewById(R.id.textViewResumeCO2);
         textViewCO2.setText(Html.fromHtml(co2TotalText+"<br>"+emissionCO2));
