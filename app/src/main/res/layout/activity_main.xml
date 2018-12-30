@@ -128,7 +128,7 @@
                         android:paddingBottom="13dp"
                         android:text="• 1H 24M/1H 30M\nTemps Utilisation"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/flecheAllAppDay"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewChrono"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0" />
 
@@ -136,6 +136,7 @@
                         android:id="@+id/textViewResumeCO2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
                         android:background="@color/backgroundTable"
                         android:gravity="left"
                         android:paddingLeft="2dp"
@@ -143,7 +144,7 @@
                         android:paddingBottom="13dp"
                         android:text="• 17gCO2/20g\nEmission CO2"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imageViewLeafEco"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0" />
 
@@ -151,21 +152,21 @@
                         android:id="@+id/imageViewLeafEco"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:layout_marginStart="13dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/textViewResumeCO2"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.476"
+                        app:layout_constraintVertical_bias="0.482"
                         app:srcCompat="@drawable/leafecology" />
 
                     <ImageView
                         android:id="@+id/imageViewChrono"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/textViewResumeTime"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.476"
+                        app:layout_constraintVertical_bias="0.482"
                         app:srcCompat="@drawable/chrono" />
 
                     <TextView
