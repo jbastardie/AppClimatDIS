@@ -96,6 +96,30 @@
                     app:snowflakesFadingEnabled="true"
                     app:snowflakesNum="120" />
 
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:background="@color/colorCO2"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewtoday"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewtoday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Aujourd'hui"
+                    android:textColor="#efefef"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
             </android.support.constraint.ConstraintLayout>
 
             <LinearLayout
@@ -114,7 +138,7 @@
                     android:id="@+id/bandeauRecap"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="13dp"
                     android:background="@color/backgroundTable"
                     android:elevation="2dp">
 
@@ -349,13 +373,103 @@
                         android:id="@+id/textViewAdvice"
                         android:layout_width="275dp"
                         android:layout_height="90dp"
-                        android:layout_marginTop="40dp"
-                        android:text="Le saviez-vous? \n Les data centers où sont stockées  vos données sont responsables de 2% des émissions de CO2, soit autant que la flotte aérienne mondiale"
+                        android:layout_marginTop="34dp"
+                        android:gravity="left|right"
+                        android:text="Le saviez-vous? \nLes data centers où sont stockées  vos données sont responsables de 2% des émissions de CO2, soit autant que la flotte aérienne mondiale"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toStartOf="@+id/imageViewChatBubble"
                         app:layout_constraintHorizontal_bias="0.499"
                         app:layout_constraintStart_toEndOf="@+id/imageViewChatBubble"
                         app:layout_constraintTop_toTopOf="@+id/imageViewChatBubble" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="@color/colorCO2" />
+
+                <TextView
+                    android:id="@+id/textView7jours"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="7 derniers jours"
+                    android:textColor="#efefef"
+                    android:textSize="20sp" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/bandeauRecapWeek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/backgroundTable"
+                    android:elevation="2dp">
+
+                    <TextView
+                        android:id="@+id/textViewResumeTimeWeek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/backgroundTable"
+                        android:gravity="left"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="• 10H 24M\nTemps Utilisation"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewChronoWeek"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/textViewResumeCO2Week"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:background="@color/backgroundTable"
+                        android:gravity="left"
+                        android:paddingLeft="2dp"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="• 64gCO2\nEmission CO2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <ImageView
+                        android:id="@+id/imageViewLeafEcoWeek"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/textViewResumeCO2Week"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.482"
+                        app:srcCompat="@drawable/leafecology" />
+
+                    <ImageView
+                        android:id="@+id/imageViewChronoWeek"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.482"
+                        app:srcCompat="@drawable/chrono" />
+
+                    <TextView
+                        android:id="@+id/flecheAllAppDayWeek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="2dp"
+                        android:text=">"
+                        android:textColor="#FFB1BEBC"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </android.support.constraint.ConstraintLayout>
 
@@ -378,6 +492,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:text="Button" />
+
             </LinearLayout>
 
         </LinearLayout>

@@ -60,6 +60,21 @@ public class MainActivity extends AppCompatActivity {
         String emissionCO2 = "Emission CO2";
         TextView textViewCO2 = findViewById(R.id.textViewResumeCO2);
         textViewCO2.setText(Html.fromHtml(co2TotalText + "<br>" + emissionCO2));
+
+        String timeTotalTextWeek = "<font color='#3da1a3'><big><b>10H 24M</b></font></big>";
+        String tempsUtilisationWeek = "Temps Utilisation";
+        TextView textViewTimeWeek = findViewById(R.id.textViewResumeTimeWeek);
+        textViewTimeWeek.setText(Html.fromHtml(timeTotalTextWeek + "<br>" + tempsUtilisationWeek));
+
+        String co2TotalTextWeek = "<font color='#a5dad2'><big><b> 62g CO2</b></font></big>";
+        String emissionCO2Week = "Emission CO2";
+        TextView textViewCO2Week = findViewById(R.id.textViewResumeCO2Week);
+        textViewCO2Week.setText(Html.fromHtml(co2TotalTextWeek + "<br>" + emissionCO2Week));
+
+        String textTips ="<font color='#3da1a3'><big><b>Le saviez-vous?</b></font></big><br>Les data centers où sont stockées  vos données sont responsables de 2% des émissions de CO2, soit autant que la flotte aérienne mondiale";
+        TextView textViewAdvice = findViewById(R.id.textViewAdvice);
+        textViewAdvice.setText(Html.fromHtml(textTips));
+
         startCountAnimation();
     }
 
