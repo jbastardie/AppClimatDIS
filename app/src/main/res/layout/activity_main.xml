@@ -10,8 +10,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -186,6 +186,7 @@
                 </android.support.constraint.ConstraintLayout>
 
                 <LinearLayout
+                    android:id="@+id/linearLayoutStats"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
@@ -318,6 +319,45 @@
 
                     </android.support.constraint.ConstraintLayout>
                 </LinearLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/layoutAdvice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageViewChatBubble"
+                        android:layout_width="0dp"
+                        android:layout_height="190dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.157"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/chatbubble" />
+
+                    <ImageView
+                        android:id="@+id/imageViewPhoque"
+                        android:layout_width="127dp"
+                        android:layout_height="138dp"
+                        android:layout_marginStart="44dp"
+                        android:layout_marginTop="100dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewChatBubble"
+                        app:srcCompat="@drawable/phoque" />
+
+                    <TextView
+                        android:id="@+id/textViewAdvice"
+                        android:layout_width="275dp"
+                        android:layout_height="90dp"
+                        android:layout_marginTop="40dp"
+                        android:text="Le saviez-vous? \n Les data centers où sont stockées  vos données sont responsables de 2% des émissions de CO2, soit autant que la flotte aérienne mondiale"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/imageViewChatBubble"
+                        app:layout_constraintHorizontal_bias="0.499"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewChatBubble"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewChatBubble" />
+
+                </android.support.constraint.ConstraintLayout>
 
                 <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/chart"
