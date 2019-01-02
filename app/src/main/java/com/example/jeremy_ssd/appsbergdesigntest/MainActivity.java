@@ -10,10 +10,18 @@ import android.text.Html;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.charts.CombinedChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.CombinedData;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
 import java.util.ArrayList;
@@ -37,18 +45,50 @@ public class MainActivity extends AppCompatActivity {
         circularProgressBar2.setProgressBarWidth(getResources().getDimension(R.dimen.default_stroke_width));
         circularProgressBar2.setBackgroundProgressBarWidth(getResources().getDimension(R.dimen.default_background_stroke_width));
 
-        LineChart chart = findViewById(R.id.chart);
-        List<Entry> entries = new ArrayList<Entry>();
-        entries.add(new Entry(1, 10));
-        entries.add(new Entry(2, 5));
-        entries.add(new Entry(3, 7));
-        entries.add(new Entry(4, 14));
-        entries.add(new Entry(5, 11));
-        entries.add(new Entry(6, 10));
-        entries.add(new Entry(7, 8));
-        LineDataSet dataSet = new LineDataSet(entries, "Label");
-        LineData lineData = new LineData(dataSet);
-        chart.setData(lineData);
+        final String[] quarters = new String[] { "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim" };
+
+        CombinedChart chart = findViewById(R.id.chart);
+        IAxisValueFormatter formatter = new IAxisValueFormatter() {
+
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return quarters[(int) value];
+            }
+
+        };
+
+        List<BarEntry> entries = new ArrayList<BarEntry>();
+        entries.add(new BarEntry(0, 10));
+        entries.add(new BarEntry(1, 5));
+        entries.add(new BarEntry(2, 7));
+        entries.add(new BarEntry(3, 14));
+        entries.add(new BarEntry(4, 11));
+        entries.add(new BarEntry(5, 10));
+        entries.add(new BarEntry(6, 8));
+        BarDataSet dataSet = new BarDataSet(entries, "Label");
+
+        List<Entry> entriesLine = new ArrayList<Entry>();
+        entriesLine.add(new Entry(0, 100));
+        entriesLine.add(new Entry(1, 50));
+        entriesLine.add(new Entry(2, 70));
+        entriesLine.add(new Entry(3, 140));
+        entriesLine.add(new Entry(4, 110));
+        entriesLine.add(new Entry(5, 100));
+        entriesLine.add(new Entry(6, 80));
+        LineDataSet dataSetLine = new LineDataSet(entriesLine, "Label");
+        LineData lineData = new LineData(dataSetLine);
+
+        CombinedData data = new CombinedData();
+        BarData barData = new BarData(dataSet);
+
+        dataSet.setAxisDependency(YAxis.AxisDependency.RIGHT);
+        dataSetLine.setAxisDependency(YAxis.AxisDependency.LEFT);
+        data.setData(barData);
+        data.setData(lineData);
+        chart.setData(data);
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
+        xAxis.setValueFormatter(formatter);
         chart.invalidate(); // refresh
 
         String timeTotalText = "<font color='#3da1a3'><big><b>0H 00M</b></font></big><small>/1H 30M</small>";
