@@ -3,11 +3,13 @@ package com.example.jeremy_ssd.appsbergdesigntest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.CombinedChart;
@@ -115,6 +117,13 @@ public class MainActivity extends AppCompatActivity {
         TextView textViewAdvice = findViewById(R.id.textViewAdvice);
         textViewAdvice.setText(Html.fromHtml(textTips));
 
+        List<AppModel> tweets = genererTweets();
+        ListView mListView = findViewById(R.id.pkg_list);
+        AppAdapter adapter = new AppAdapter(MainActivity.this, tweets);
+        mListView.setAdapter(adapter);
+        mListView.setEnabled(false);
+
+
         startCountAnimation();
     }
 
@@ -168,5 +177,15 @@ public class MainActivity extends AppCompatActivity {
         int resultMinutes = minutes % 60;
         int resultHour = minutes / 60;
         return resultHour + "H " + String.format(Locale.FRANCE,"%02d", resultMinutes) + "M";
+    }
+
+    private List<AppModel> genererTweets(){
+        List<AppModel> tweets = new ArrayList<>();
+        tweets.add(new AppModel(Color.BLACK, "Florent", "Mon premier tweet !"));
+        tweets.add(new AppModel(Color.BLUE, "Kevin", "C'est ici que ça se passe !"));
+        tweets.add(new AppModel(Color.GREEN, "Logan", "Que c'est beau..."));
+        tweets.add(new AppModel(Color.RED, "Mathieu", "Il est quelle heure ??"));
+        tweets.add(new AppModel(Color.GRAY, "Willy", "On y est presque"));
+        return tweets;
     }
 }
