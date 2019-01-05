@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -133,15 +134,15 @@ public class MainActivity extends AppCompatActivity {
         final String timeString = convertAffichageHour(valueTime);
         final ValueAnimator animatorCO2 = ValueAnimator.ofInt(0, valueCO2);
         final ValueAnimator animatorTime = ValueAnimator.ofInt(0, valueTime);
-        animatorTime.setDuration(2500);
-        animatorCO2.setDuration(2000);
+        animatorTime.setDuration(2000);
+        animatorCO2.setDuration(1000);
         final Button todayUsageButton = findViewById(R.id.buttonTodayActivity);
         final String tempsUtilisation = "Temps Utilisation";
         final TextView textViewTime = findViewById(R.id.textViewResumeTime);
         final String emissionCO2 = "Emission CO2";
         final TextView textViewCO2 = findViewById(R.id.textViewResumeCO2);
         CircularProgressBar circularProgressBar = findViewById(R.id.circularProgress);
-        circularProgressBar.setProgressWithAnimation(85, 2500);
+        circularProgressBar.setProgressWithAnimation(85, 2000);
         animatorCO2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             public void onAnimationUpdate(ValueAnimator animation) {
                 String stringCO2 = String.format(Locale.FRANCE,"%1$2s", animation.getAnimatedValue().toString());
@@ -167,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 animatorCO2.start();
                 CircularProgressBar circularProgressBar2 = findViewById(R.id.circularProgress2);
-                circularProgressBar2.setProgressWithAnimation(65, 2000);
+                circularProgressBar2.setProgressWithAnimation(65, 1000);
             }
         });
         animatorTime.start();
@@ -181,11 +182,15 @@ public class MainActivity extends AppCompatActivity {
 
     private List<AppModel> genererTweets(){
         List<AppModel> tweets = new ArrayList<>();
-        tweets.add(new AppModel(Color.BLACK, "Florent", "Mon premier tweet !"));
-        tweets.add(new AppModel(Color.BLUE, "Kevin", "C'est ici que ça se passe !"));
-        tweets.add(new AppModel(Color.GREEN, "Logan", "Que c'est beau..."));
-        tweets.add(new AppModel(Color.RED, "Mathieu", "Il est quelle heure ??"));
-        tweets.add(new AppModel(Color.GRAY, "Willy", "On y est presque"));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Facebook", getDrawable(R.drawable.facebook)));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Instagram", getDrawable(R.drawable.instagram)));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Youtube", getDrawable(R.drawable.youtube)));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Chrome", getDrawable(R.drawable.leafecology)));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Snapchat", getDrawable(R.drawable.pingouinlite)));
+//        tweets.add(new AppModel(Color.BLUE, "Kevin", "C'est ici que ça se passe !"));
+//        tweets.add(new AppModel(Color.GREEN, "Logan", "Que c'est beau..."));
+//        tweets.add(new AppModel(Color.RED, "Mathieu", "Il est quelle heure ??"));
+//        tweets.add(new AppModel(Color.GRAY, "Willy", "On y est presque"));
         return tweets;
     }
 }

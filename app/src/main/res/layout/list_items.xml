@@ -4,19 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?android:attr/listPreferredItemHeight"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/imageViewicon"
-        android:layout_width="95dp"
-        android:layout_height="match_parent"
+        android:layout_width="71dp"
+        android:layout_height="60dp"
         android:padding="10dp"
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
         android:id="@+id/package_name"
-        android:layout_width="179dp"
-        android:layout_height="match_parent"
+        android:layout_width="151dp"
+        android:layout_height="60dp"
+        android:gravity="left|fill_vertical"
         android:maxLines="1"
         android:paddingStart="12dip"
         android:paddingEnd="6dip"
@@ -24,7 +26,7 @@
 
     <LinearLayout
         android:layout_width="121dp"
-        android:layout_height="match_parent"
+        android:layout_height="60dp"
         android:orientation="vertical"
         android:weightSum="3">
 

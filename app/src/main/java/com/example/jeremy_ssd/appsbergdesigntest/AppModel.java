@@ -1,40 +1,64 @@
 package com.example.jeremy_ssd.appsbergdesigntest;
 
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
+
 public class AppModel {
 
-    private int color;
 
-    public String getPseudo() {
-        return pseudo;
+    private String temps;
+    private String compteur;
+    private String co2;
+    private String nomApp;
+    private Drawable logo;
+
+    public String getTemps() {
+        return temps;
     }
 
-    public void setPseudo(String pseudo) {
-        this.pseudo = pseudo;
+    public void setTemps(String temps) {
+        this.temps = temps;
     }
 
-    public String getText() {
-        return text;
+    public String getCompteur() {
+        return compteur;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setCompteur(String compteur) {
+        this.compteur = compteur;
     }
 
-    private String pseudo;
-
-    public int getColor() {
-        return color;
+    public String getCo2() {
+        return co2;
     }
 
-    public void setColor(int color) {
-        this.color = color;
+    public void setCo2(String co2) {
+        this.co2 = co2;
     }
 
-    private String text;
+    public String getNomApp() {
+        return nomApp;
+    }
 
-    public AppModel(int color, String pseudo, String text) {
-        this.color = color;
-        this.pseudo = pseudo;
-        this.text = text;
+    public void setNomApp(String nomApp) {
+        this.nomApp = nomApp;
+    }
+
+    public Drawable getLogo() {
+        return logo;
+    }
+
+    public void setLogo(Drawable logo) {
+        this.logo = logo;
+    }
+
+    public AppModel(String temps, String compteur, String co2, String nomApp, Drawable logo) {
+        this.temps = temps;
+        this.compteur = compteur;
+        this.co2 = co2;
+        this.nomApp=nomApp;
+        this.logo=logo;
     }
 }
+
+
