@@ -3,12 +3,15 @@ package com.example.jeremy_ssd.appsbergdesigntest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -180,17 +183,34 @@ public class MainActivity extends AppCompatActivity {
         return resultHour + "H " + String.format(Locale.FRANCE,"%02d", resultMinutes) + "M";
     }
 
-    private List<AppModel> genererTweets(){
-        List<AppModel> tweets = new ArrayList<>();
-        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Facebook", getDrawable(R.drawable.facebook)));
-        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Instagram", getDrawable(R.drawable.instagram)));
-        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Youtube", getDrawable(R.drawable.youtube)));
-        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Chrome", getDrawable(R.drawable.leafecology)));
-        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Snapchat", getDrawable(R.drawable.pingouinlite)));
+    private ArrayList<AppModel> genererTweets(){
+        ArrayList<AppModel> tweets = new ArrayList<>();
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Facebook", getResources().getIdentifier("facebook", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Instagram", getResources().getIdentifier("instagram", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Youtube", getResources().getIdentifier("youtube", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Chrome", getResources().getIdentifier("leafecology", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Snapchat", getResources().getIdentifier("pingouinlite", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Facebook", getResources().getIdentifier("facebook", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Instagram", getResources().getIdentifier("instagram", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Youtube", getResources().getIdentifier("youtube", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Chrome", getResources().getIdentifier("leafecology", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Snapchat", getResources().getIdentifier("pingouinlite", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Facebook", getResources().getIdentifier("facebook", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Instagram", getResources().getIdentifier("instagram", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Youtube", getResources().getIdentifier("youtube", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Chrome", getResources().getIdentifier("leafecology", "drawable", getPackageName())));
+        tweets.add(new AppModel("02:12:45", "visites: 47", "25g CO2", "Snapchat", getResources().getIdentifier("pingouinlite", "drawable", getPackageName())));
 //        tweets.add(new AppModel(Color.BLUE, "Kevin", "C'est ici que ça se passe !"));
 //        tweets.add(new AppModel(Color.GREEN, "Logan", "Que c'est beau..."));
 //        tweets.add(new AppModel(Color.RED, "Mathieu", "Il est quelle heure ??"));
 //        tweets.add(new AppModel(Color.GRAY, "Willy", "On y est presque"));
         return tweets;
+    }
+
+    public void goToListActivity(View view){
+        Intent intent = new Intent(this, ListActivity.class);
+        ArrayList<AppModel> tweets = genererTweets();
+        intent.putExtra("DataDaily", tweets);
+        startActivity(intent);
     }
 }

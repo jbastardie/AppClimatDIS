@@ -3,14 +3,16 @@ package com.example.jeremy_ssd.appsbergdesigntest;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
-public class AppModel {
+import java.io.Serializable;
+
+public class AppModel implements Serializable {
 
 
     private String temps;
     private String compteur;
     private String co2;
     private String nomApp;
-    private Drawable logo;
+    private int logo;
 
     public String getTemps() {
         return temps;
@@ -44,15 +46,15 @@ public class AppModel {
         this.nomApp = nomApp;
     }
 
-    public Drawable getLogo() {
+    public int getLogo() {
         return logo;
     }
 
-    public void setLogo(Drawable logo) {
+    public void setLogo(int logo) {
         this.logo = logo;
     }
 
-    public AppModel(String temps, String compteur, String co2, String nomApp, Drawable logo) {
+    public AppModel(String temps, String compteur, String co2, String nomApp, int logo) {
         this.temps = temps;
         this.compteur = compteur;
         this.co2 = co2;

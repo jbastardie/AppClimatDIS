@@ -45,7 +45,7 @@ public class AppAdapter extends ArrayAdapter<AppModel> {
         viewHolder.compteur.setText(app.getCompteur());
         viewHolder.co2.setText(app.getCo2());
         viewHolder.nomApp.setText(app.getNomApp());
-        viewHolder.logo.setImageDrawable(app.getLogo());
+        viewHolder.logo.setImageResource(app.getLogo());
 
         return convertView;
     }

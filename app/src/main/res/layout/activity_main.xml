@@ -62,6 +62,7 @@
                     android:text="3H 18M \n 14gCO2"
                     android:textAllCaps="false"
                     android:textSize="12sp"
+                    android:onClick="goToListActivity"
                     app:layout_constraintBottom_toTopOf="@+id/circularProgress2"
                     app:layout_constraintEnd_toStartOf="@+id/circularProgress2"
                     app:layout_constraintStart_toEndOf="@+id/circularProgress2"
