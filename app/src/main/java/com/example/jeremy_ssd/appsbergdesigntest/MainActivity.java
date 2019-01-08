@@ -127,6 +127,12 @@ public class MainActivity extends AppCompatActivity {
         mListView.setAdapter(adapter);
         mListView.setEnabled(false);
 
+        TextView textViewComparatif = findViewById(R.id.textview_equivalence_co2);
+
+        String texEquivalenceAmpoule = "<br>· une ampoule allumée pendant <font color='#a5dad2'><big><b>78</b></font></big> heures";
+        String texEquivalenceVoiture = "<br>· <font color='#a5dad2'><big><b>7 km</b></font></big> en voiture citadine";
+        String textEquivalence = "<font color='#a5dad2'><big><b> 62g de CO2</b></font></big> équivaut à:"+texEquivalenceAmpoule+texEquivalenceVoiture;
+        textViewComparatif.setText(Html.fromHtml(textEquivalence));
 
         startCountAnimation();
     }
